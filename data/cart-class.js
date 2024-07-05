@@ -1,16 +1,16 @@
 class Cart{
     
     cartItems;
-    localStorageKey;
+    #localStorageKey;
 
     constructor(localStorageKey){
-        this.localStorageKey = localStorageKey;
-        this.loadFromStorage();
+        this.#localStorageKey = localStorageKey;
+        this.#loadFromStorage();
     }
 
 
-    loadFromStorage(){  //this line is same shorthand property for loadFromStorage: function(){}
-        this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey)); //this represents object name so if object name change it will not affect the value.
+    #loadFromStorage(){  //this line is same shorthand property for loadFromStorage: function(){}
+        this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey)); //this represents object name so if object name change it will not affect the value.
         
         if(!this.cartItems){
             this.cartItems = [
@@ -30,7 +30,7 @@ class Cart{
 
 
     saveToStorage(){
-        localStorage.setItem(this.localStorageKey,JSON.stringify(this.cartItems));
+        localStorage.setItem(this.#localStorageKey,JSON.stringify(this.cartItems));
     }
 
 
