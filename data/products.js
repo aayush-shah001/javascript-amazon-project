@@ -723,3 +723,11 @@ export const products = [
   }
   return new Product(productDetails);
 });
+
+const obj3 = {
+  method(){
+    console.log(this);
+  }
+};
+
+obj3.method();

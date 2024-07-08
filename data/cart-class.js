@@ -28,7 +28,6 @@ export class Cart{
         }
     }
 
-
     saveToStorage(){
         localStorage.setItem(this.#localStorageKey,JSON.stringify(this.cartItems));
     }
